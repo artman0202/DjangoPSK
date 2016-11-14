@@ -1,0 +1,39 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-input/paper-input-container.html">
+<link rel="import" href="../bower_components/paper-input/paper-input.html">
+<dom-module id="login-form">
+  <template>
+    <style>
+      :host {
+        --app-primary-color: #4285f4;
+        --app-secondary-color: black;
+
+        display: block;
+      }
+    </style>
+    <paper-input-container>
+        <label for="username-input">Your name</label>
+        <input id='username-input' name="username" is="iron-input">
+    </paper-input-container>
+
+      <h1>{{ formInstance }}</h1>
+      <div id="form-setter" class="sper-form">
+
+      </div>
+      <label>
+          <input type="text" value="{{ formInstance }}">
+      </label>
+  </template>
+      <script>
+    Polymer({
+        is: 'login-form',
+        properties : {
+            formInstance: String,
+        },
+
+        ready: function(){
+//                alert(this.formInstance);
+            }
+    });
+  </script>
+</dom-module>
